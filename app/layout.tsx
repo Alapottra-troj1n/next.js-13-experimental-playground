@@ -2,6 +2,7 @@ import "./globals.css";
 import { Urbanist } from "next/font/google";
 import Link from "next/link";
 import { Metadata } from "next";
+import Navbar from "./reusableComponents/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,12 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${urbanist.variable} font-urbanist`}>
-        <nav className="flex gap-5">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/about"}>About</Link>
-          <Link href={"/users"}>Users</Link>
-        </nav>
+      <body className={`${urbanist.variable} font-urbanist bg-slate-800 text-gray-100`}>
+      <Navbar/>
         {children}
       </body>
     </html>
